@@ -1,0 +1,30 @@
+USE [Golf]
+GO
+
+/****** Object:  Table [dbo].[Hole]    Script Date: 9/26/2020 8:13:45 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Hole](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CourseId] [int] NOT NULL,
+	[Number] [int] NOT NULL,
+	[Par] [int] NOT NULL,
+ CONSTRAINT [PK_Hole] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Hole]  WITH CHECK ADD  CONSTRAINT [FK_Hole_Course] FOREIGN KEY([CourseId])
+REFERENCES [dbo].[Course] ([Id])
+GO
+
+ALTER TABLE [dbo].[Hole] CHECK CONSTRAINT [FK_Hole_Course]
+GO
+
+

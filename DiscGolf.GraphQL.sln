@@ -13,6 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		build.ps1 = build.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database_deploy", "database_deploy", "{9B0D68A5-C818-41F1-9C3F-54E299E28919}"
+	ProjectSection(SolutionItems) = preProject
+		database_deploy\001_CreateTable_Person.sql = database_deploy\001_CreateTable_Person.sql
+		database_deploy\002_CreateTable_Course.sql = database_deploy\002_CreateTable_Course.sql
+		database_deploy\003_CreateTable_Group.sql = database_deploy\003_CreateTable_Group.sql
+		database_deploy\004_CreateTable_Hole.sql = database_deploy\004_CreateTable_Hole.sql
+		database_deploy\005_CreateTable_Round.sql = database_deploy\005_CreateTable_Round.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscGolf.GraphQL.Data", "..\DiscGolf.GraphQL.Data\DiscGolf.GraphQL.Data.csproj", "{F214244D-E749-4134-8CAE-5A6282AC5B67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +38,16 @@ Global
 		{6AD33CCC-8D3F-4AAD-9A0A-532EB1A1E6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD33CCC-8D3F-4AAD-9A0A-532EB1A1E6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD33CCC-8D3F-4AAD-9A0A-532EB1A1E6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F214244D-E749-4134-8CAE-5A6282AC5B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F214244D-E749-4134-8CAE-5A6282AC5B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F214244D-E749-4134-8CAE-5A6282AC5B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F214244D-E749-4134-8CAE-5A6282AC5B67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B0D68A5-C818-41F1-9C3F-54E299E28919} = {15C2CB18-7BC3-465C-A8CE-C581630776E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F7F8A8A-CC21-49C5-B4A9-E48A8EDFC826}

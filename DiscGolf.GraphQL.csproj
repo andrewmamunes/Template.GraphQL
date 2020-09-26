@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="database_deploy\**" />
+    <Content Remove="database_deploy\**" />
+    <EmbeddedResource Remove="database_deploy\**" />
+    <None Remove="database_deploy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="build.cake" />
     <None Remove="build.ps1" />
   </ItemGroup>

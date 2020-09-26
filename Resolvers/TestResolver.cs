@@ -1,10 +1,8 @@
-﻿using HotChocolate;
-using System;
+﻿using DiscGolf.GraphQL.DataLoaders;
+using HotChocolate;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DiscGolf.GraphQL.DataLoaders;
 
 namespace DiscGolf.GraphQL.Resolvers
 {
