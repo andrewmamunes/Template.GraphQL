@@ -1,7 +1,8 @@
-using DiscGolf.GraphQL.Resolvers;
+using DiscGolf.GraphQL.Data.Modules;
 using DiscGolf.GraphQL.Types.Query;
 using HotChocolate;
 using HotChocolate.AspNetCore;
+using HotChocolate.Execution.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,18 +16,19 @@ namespace DiscGolf.GraphQL
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services
+                .AddMvc();
 
-            services.AddScoped<TestResolver>();
-
-            services.AddDataLoaderRegistry();
-
-            services.AddGraphQL(sp => SchemaBuilder.New()
+            services
+                .RegisterDataServices()
+                .AddDataLoaderRegistry()
+                .AddGraphQL(sp => SchemaBuilder.New()
                                 .AddQueryType<QueryType>()
                                 .AddServices(sp)
-                                .Create());
+                                .Create(),
+                                new QueryExecutionOptions { ForceSerialExecution = true});
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

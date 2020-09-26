@@ -1,7 +1,7 @@
 USE [Golf]
 GO
 
-/****** Object:  Table [dbo].[Course]    Script Date: 9/26/2020 8:12:52 AM ******/
+/****** Object:  Table [dbo].[Course]    Script Date: 9/26/2020 12:01:09 PM ******/
 SET ANSI_NULLS ON
 GO
 

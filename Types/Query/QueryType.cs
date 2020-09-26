@@ -1,7 +1,8 @@
-﻿using HotChocolate.Resolvers;
-using HotChocolate.Types;
-using DiscGolf.GraphQL.DataLoaders;
+﻿using DiscGolf.GraphQL.Data.Models;
 using DiscGolf.GraphQL.Resolvers;
+using HotChocolate;
+using HotChocolate.Types;
+using System.Linq;
 
 namespace DiscGolf.GraphQL.Types.Query
 {
@@ -9,13 +10,21 @@ namespace DiscGolf.GraphQL.Types.Query
     {
         protected override void Configure(IObjectTypeDescriptor<RootQuery> descriptor)
         {
-            descriptor
-                .Field("test")
-                .Argument("testSize", a => a.Type<NonNullType<HotChocolate.Types.StringType>>())
-                .Resolver(ctx => ctx.Resolver<TestResolver>()
-                .RunLargeTest(ctx.Argument<string>("testSize"), ctx.DataLoader<FirstDataLoader>(), ctx.DataLoader<SecondDataLoader>(), default));
+            
         }
     }
 
-    public class RootQuery { }
+    public class RootQuery {
+        [UseSelection]
+        public IQueryable<Person> GetPeople([Service] GolfContext context) => context.Person;
+        [UseSelection]
+        public IQueryable<Round> GetRounds([Service] GolfContext context) => context.Round;
+        [UseSelection]
+        public IQueryable<Course> GetCourses([Service] GolfContext context) => context.Course;
+        [UseSelection]
+        public IQueryable<Hole> GetHoles([Service] GolfContext context) => context.Hole;
+
+        
+
+    }
 }
