@@ -11,7 +11,7 @@ var configuration = Argument("Configuration", "Debug");
 //////////////////////////////////////////////////////////////////////
 
 // Define variables
-var solutionName = "Template.GraphQL";
+var solutionName = "DiscGolf.GraphQL";
 
 // Define directories.
 var buildDir = Directory($"./{solutionName}/bin") + Directory(configuration);
@@ -56,7 +56,7 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-	var testPath = $"./{solutionName}.Tests/bin/" + configuration + "/**/*.Tests.dll";
+	var testPath = $"../{solutionName}.Tests/bin/" + configuration + "/**/*.Tests.dll";
 
 	Information(testPath);
 

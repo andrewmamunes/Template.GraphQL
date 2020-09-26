@@ -1,9 +1,9 @@
 ﻿using HotChocolate.Resolvers;
 using HotChocolate.Types;
-using Template.GraphQL.DataLoaders;
-using Template.GraphQL.Resolvers;
+using DiscGolf.GraphQL.DataLoaders;
+using DiscGolf.GraphQL.Resolvers;
 
-namespace Template.GraphQL.Types.Query
+namespace DiscGolf.GraphQL.Types.Query
 {
     public class QueryType : ObjectType<RootQuery>
     {

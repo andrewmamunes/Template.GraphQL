@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Template.GraphQL.DataLoaders;
+using DiscGolf.GraphQL.DataLoaders;
 
-namespace Template.GraphQL.Resolvers
+namespace DiscGolf.GraphQL.Resolvers
 {
     public class TestResolver
     {
