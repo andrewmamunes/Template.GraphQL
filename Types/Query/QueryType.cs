@@ -1,4 +1,5 @@
 ﻿using DiscGolf.GraphQL.Data.Models;
+using DiscGolf.GraphQL.Data.Repositories;
 using DiscGolf.GraphQL.Resolvers;
 using HotChocolate;
 using HotChocolate.Types;
@@ -10,21 +11,16 @@ namespace DiscGolf.GraphQL.Types.Query
     {
         protected override void Configure(IObjectTypeDescriptor<RootQuery> descriptor)
         {
-            
+            descriptor
+                .Field<CourseRepository>(repo => repo.Fetch(default))
+                .Argument("courseId", arg => arg.Type<IntType>())
+                .Name("course")
+                .Type<CourseType>();
+
         }
     }
 
     public class RootQuery {
-        [UseSelection]
-        public IQueryable<Person> GetPeople([Service] GolfContext context) => context.Person;
-        [UseSelection]
-        public IQueryable<Round> GetRounds([Service] GolfContext context) => context.Round;
-        [UseSelection]
-        public IQueryable<Course> GetCourses([Service] GolfContext context) => context.Course;
-        [UseSelection]
-        public IQueryable<Hole> GetHoles([Service] GolfContext context) => context.Hole;
-
         
-
     }
 }
