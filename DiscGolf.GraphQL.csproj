@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
     <None Remove="build.cake" />
     <None Remove="build.ps1" />
   </ItemGroup>

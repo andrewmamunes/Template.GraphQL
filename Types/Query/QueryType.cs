@@ -1,9 +1,5 @@
-﻿using DiscGolf.GraphQL.Data.Models;
-using DiscGolf.GraphQL.Data.Repositories;
-using DiscGolf.GraphQL.Resolvers;
-using HotChocolate;
+﻿using DiscGolf.GraphQL.Data.Repositories;
 using HotChocolate.Types;
-using System.Linq;
 
 namespace DiscGolf.GraphQL.Types.Query
 {
@@ -16,7 +12,6 @@ namespace DiscGolf.GraphQL.Types.Query
                 .Argument("courseId", arg => arg.Type<IntType>())
                 .Name("course")
                 .Type<CourseType>();
-
         }
     }
 

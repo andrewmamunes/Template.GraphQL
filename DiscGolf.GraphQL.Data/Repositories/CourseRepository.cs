@@ -1,20 +1,34 @@
 ﻿using DiscGolf.GraphQL.Data.Models;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace DiscGolf.GraphQL.Data.Repositories
 {
-    public class CourseRepository
+    public class CourseRepository : IMutateRepository<Course>
     {
-        private readonly GolfContext _context;
+        private readonly DbSet<Course> Courses;
         public CourseRepository(GolfContext context)
         {
-            _context = context;
+            Courses = context.Course;
         }
 
         public Course Fetch(int courseId)
         {
-            return _context.Course.SingleOrDefault(course => course.Id == courseId);
+            return Courses.SingleOrDefault(course => course.Id == courseId);
+        }
+
+        public Course Insert(Course item)
+        {
+            Courses.Add(item);
+
+            return item;
+        }
+
+        public Course Update(Course item)
+        {
+            Courses.Update(item);
+
+            return item;
         }
     }
 }

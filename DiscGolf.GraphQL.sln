@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscGolf.GraphQL", "DiscGol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15C2CB18-7BC3-465C-A8CE-C581630776E8}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore.txt = .gitignore.txt
+		.gitignore = .gitignore
 		build.cake = build.cake
 		build.ps1 = build.ps1
 	EndProjectSection

@@ -18,7 +18,7 @@ namespace DiscGolf.GraphQL.Types.Resolvers
                 .Select(scoresForHole => new AnalyticsResult 
                 { 
                     HoleId = scoresForHole.Key.Value, 
-                    HoleAverage = scoresForHole.ToList().Average(result => result.Score).Value
+                    HoleAverage = scoresForHole.Average(result => result.Score).Value
                 });
         }
     }
